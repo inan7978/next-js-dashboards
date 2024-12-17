@@ -5,6 +5,9 @@
 // In your case, the pages inside /dashboard will automatically be nested inside a <Layout />
 import SideNav from "@/app/ui/dashboard/sidenav";
 
+export const experimental_ppr = true; // PPR will allow the static parts of website to load asap in production making the app appear faster to the user
+// using Suspense allows very minimal changes to code and that is enough for the app to know which routes are static and dynamic
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   // ^^ this is just specifying that children is a property of the props object, and its type is React.ReactNode
   // equivalent to Layout({children}) in JS syntax
