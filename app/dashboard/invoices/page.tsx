@@ -6,6 +6,12 @@ import { lusitana } from "@/app/ui/fonts";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
 import { fetchInvoicesPages } from "@/app/lib/data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  // this will override title metadata for the invoices page but keep other setting from the parent metadata info
+  title: "Invoices",
+};
 
 export default async function Page(props: {
   searchParams?: Promise<{

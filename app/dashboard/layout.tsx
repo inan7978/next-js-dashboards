@@ -1,9 +1,18 @@
 // Dashboards have some sort of navigation that is shared across multiple pages. In Next.js, you can use a special layout.tsx file to create UI that is shared between multiple pages.
-
+import { Metadata } from "next";
 //A few things are going on in this code, so let's break it down: First, you're importing the <SideNav /> component into your layout. Any components you import into this file will be part of the layout.The <Layout /> component receives a children prop. This child can either be a page or another layout.
 
 // In your case, the pages inside /dashboard will automatically be nested inside a <Layout />
 import SideNav from "@/app/ui/dashboard/sidenav";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Acme Dashboard", // %s in the template will be replaced with the specific page title
+    default: "Acme Dashboard",
+  },
+  description: "The official Next.js Learn Dashboard built with App Router.",
+  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
 
 export const experimental_ppr = true; // PPR will allow the static parts of website to load asap in production making the app appear faster to the user
 // using Suspense allows very minimal changes to code and that is enough for the app to know which routes are static and dynamic
